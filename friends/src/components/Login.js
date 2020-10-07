@@ -2,6 +2,8 @@ import React from "react";
 
 import { axiosWithAuth } from "../utils/axios";
 import Friends from "./Friends";
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 class Login extends React.Component {
     state = {
@@ -39,19 +41,21 @@ class Login extends React.Component {
         return (
             <div>
                 <form onSubmit = {this.login}>
-                    <input
+                    <TextField
                         type="text"
                         name="username"
+                        placeholder="Username"
                         value={this.state.credentials.username}
                         onChange={this.handleChange}
                         />
-                    <input
+                    <TextField
                         type="password"
                         name="password"
+                        placeholder="Password"
                         value={this.state.credentials.password}
                         onChange={this.handleChange}
                         />
-                    <button>Log in</button>
+                    <Button variant="contained" color="secondary">Log in</Button>
                 </form>
             </div>
         )

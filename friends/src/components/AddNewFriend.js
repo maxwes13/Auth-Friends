@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { axiosWithAuth } from "../utils/axios";
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 const NewFriend = () => {
 
@@ -54,7 +57,7 @@ const NewFriend = () => {
     return (
                     <div>
                         <form onSubmit={submitForm}>
-                            <input htmlFor="name"
+                            <TextField htmlFor="name"
                             id = "name"
                             name = "name"
                             type = "text"
@@ -63,7 +66,7 @@ const NewFriend = () => {
                             onChange = {handleChange}
                             />
         
-                            <input htmlFor="age"
+                            <TextField htmlFor="age"
                             id = "age"
                             name = "age"
                             type = "number"
@@ -72,7 +75,7 @@ const NewFriend = () => {
                             onChange = {handleChange}
                             /> 
         
-                            <input htmlFor="email"
+                            <TextField htmlFor="email"
                             id = "email"
                             name = "email"
                             type = "text"
@@ -81,7 +84,9 @@ const NewFriend = () => {
                             onChange = {handleChange}
                             />
         
-                            <button type="submit">Add a new friend</button>
+                            <Button variant="contained" color="secondary">
+                                Add a new friend
+                            </Button>
                         </form>
                     </div>
                 )
